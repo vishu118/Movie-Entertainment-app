@@ -5,9 +5,11 @@
   align-items: center;
   padding: 12px;
   padding-bottom: 15px;
-  box-shadow: 0px 1px 5px black;
+  box-shadow:  rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;;
   color: white;
   z-index: 100;
+  position: fixed;
+  width: 100%;
 }
 .Navbar-logo {
   display: flex;
@@ -69,6 +71,7 @@
   justify-content: space-between;
   height: 3em;
   padding: 0 20px;
+  margin-right: 20px;
   cursor: pointer;
 }
 
