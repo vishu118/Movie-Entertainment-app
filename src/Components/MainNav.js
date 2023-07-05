@@ -3,9 +3,11 @@ import Box from '@mui/material/Box';
 
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import RestoreIcon from '@mui/icons-material/Restore';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
+import WhatshotIcon from '@mui/icons-material/Whatshot';
+import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
+import LiveTvIcon from '@mui/icons-material/LiveTv';
+import SearchIcon from '@mui/icons-material/Search';
+
 
 
 
@@ -20,7 +22,8 @@ export default function SimpleBottomNavigation() {
       backgroundColor: "#39445a",
       boxShadow: "  rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;",
       position: "fixed",
-      bottom: 0
+      bottom: 0,
+      zIndex: 100,
 
     }}
         showLabels
@@ -29,9 +32,10 @@ export default function SimpleBottomNavigation() {
           setValue(newValue);
         }}
       >
-        <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-        <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-        <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
+        <BottomNavigationAction style={{color:"white"}} label="Trending" icon={<WhatshotIcon />} />
+        <BottomNavigationAction style={{color:"white"}} label="Movies" icon={<LocalMoviesIcon />} />
+        <BottomNavigationAction style={{color:"white"}} label="TV Series" icon={<LiveTvIcon/>} />
+        <BottomNavigationAction style={{color:"white"}} label="Serach" icon={<SearchIcon/>} />
       </BottomNavigation>
     </Box>
   );
