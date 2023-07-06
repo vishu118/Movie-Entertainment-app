@@ -29,8 +29,8 @@ export default function SimpleBottomNavigation() {
         }}
         showLabels
         value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
+        onChange={(event, value) => {
+          setValue(value);
         }}
       >
         <BottomNavigationAction
@@ -38,28 +38,28 @@ export default function SimpleBottomNavigation() {
           label="Trending"
           icon={<WhatshotIcon />}
           value={value}
-          onclick = {()=>navigate("/")}
+          onClick = {()=>navigate("/")}
         />
         <BottomNavigationAction
           style={{ color: "white" }}
           label="Movies"
           icon={<LocalMoviesIcon />}
           value={value}
-          onclick = {()=>navigate("/Movies")}
+          onClick = {()=>navigate("/Movies")}
         />
         <BottomNavigationAction
           style={{ color: "white" }}
           label="TV Series"
           icon={<LiveTvIcon />}
           value={value}
-          onclick = {()=>navigate("/TV")}
+          onClick = {()=>navigate("/TV")}
         />
         <BottomNavigationAction
           style={{ color: "white" }}
           label="Serach"
           icon={<SearchIcon />}
           value={value}
-          onclick = {()=>navigate("/search")}
+          onClick = {()=>navigate("/search")}
         />
       </BottomNavigation>
     </Box>
