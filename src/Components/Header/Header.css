@@ -71,7 +71,7 @@
   justify-content: space-between;
   height: 3em;
   padding: 0 20px;
-  margin-right: 20px;
+  margin-right: 25px;
   cursor: pointer;
 }
 
@@ -98,7 +98,11 @@
     display: flex;
    justify-content: center;
   }
+  .logo{
+    margin-left: -40px;
+  }
   .Navbar-search {
     display: none;
   }
+  
 }

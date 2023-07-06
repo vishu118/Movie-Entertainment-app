@@ -1,41 +1,66 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-
-import BottomNavigation from '@mui/material/BottomNavigation';
-import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import WhatshotIcon from '@mui/icons-material/Whatshot';
-import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
-import LiveTvIcon from '@mui/icons-material/LiveTv';
-import SearchIcon from '@mui/icons-material/Search';
-
-
+import * as React from "react";
+import Box from "@mui/material/Box";
+import BottomNavigation from "@mui/material/BottomNavigation";
+import BottomNavigationAction from "@mui/material/BottomNavigationAction";
+import WhatshotIcon from "@mui/icons-material/Whatshot";
+import LocalMoviesIcon from "@mui/icons-material/LocalMovies";
+import LiveTvIcon from "@mui/icons-material/LiveTv";
+import SearchIcon from "@mui/icons-material/Search";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 export default function SimpleBottomNavigation() {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
+  const navigate = useNavigate();
+ 
+ 
 
   return (
-    <Box >
+    <Box>
       <BottomNavigation
-      sx={{
-      width:"100%",
-      backgroundColor: "#39445a",
-      boxShadow: "  rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;",
-      position: "fixed",
-      bottom: 0,
-      zIndex: 100,
-
-    }}
+        sx={{
+          width: "100%",
+          backgroundColor: "#39445a",
+          boxShadow: "  rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;",
+          position: "fixed",
+          bottom: 0,
+          zIndex: 100,
+        }}
         showLabels
         value={value}
         onChange={(event, newValue) => {
           setValue(newValue);
         }}
       >
-        <BottomNavigationAction style={{color:"white"}} label="Trending" icon={<WhatshotIcon />} />
-        <BottomNavigationAction style={{color:"white"}} label="Movies" icon={<LocalMoviesIcon />} />
-        <BottomNavigationAction style={{color:"white"}} label="TV Series" icon={<LiveTvIcon/>} />
-        <BottomNavigationAction style={{color:"white"}} label="Serach" icon={<SearchIcon/>} />
+        <BottomNavigationAction
+          style={{ color: "white" }}
+          label="Trending"
+          icon={<WhatshotIcon />}
+          value={value}
+          onclick = {()=>navigate("/")}
+        />
+        <BottomNavigationAction
+          style={{ color: "white" }}
+          label="Movies"
+          icon={<LocalMoviesIcon />}
+          value={value}
+          onclick = {()=>navigate("/Movies")}
+        />
+        <BottomNavigationAction
+          style={{ color: "white" }}
+          label="TV Series"
+          icon={<LiveTvIcon />}
+          value={value}
+          onclick = {()=>navigate("/TV")}
+        />
+        <BottomNavigationAction
+          style={{ color: "white" }}
+          label="Serach"
+          icon={<SearchIcon />}
+          value={value}
+          onclick = {()=>navigate("/search")}
+        />
       </BottomNavigation>
     </Box>
   );
