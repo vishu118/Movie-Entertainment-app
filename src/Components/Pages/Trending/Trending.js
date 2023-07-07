@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import axios from "axios";
+import "./Trending.css"
 import { useState } from "react";
 import SingleContent from "../../SingleContent/SingleContent";
 
@@ -24,8 +25,9 @@ const Trending = () => {
   }, []);
 
   return (
-    <div className="trending">
-      <h1>hello</h1>
+   <>
+      <span className="PageTitle">Trending Movies</span>
+     <div className="trending">
       {content &&
         content.map((ele) => (
           <SingleContent
@@ -39,6 +41,7 @@ const Trending = () => {
           />
         ))}
     </div>
+   </>
   );
 };
 

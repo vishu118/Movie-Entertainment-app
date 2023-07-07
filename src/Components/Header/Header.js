@@ -8,7 +8,7 @@ const Header = () => {
  <>
      <div className="header">
         
-          <span className="title">
+          <span className="Name">
             <img src={logo} alt="" className="logo" />
             MOVIX
           </span>
