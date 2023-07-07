@@ -1,12 +1,17 @@
-body{
-  /* overflow-y: hidden; */
+*{
+  scroll-behavior: smooth;
 }
 
+body::-webkit-scrollbar{
+  display: none;
+  ;
+}
 .App {
   min-height: 100vh;
   background-color: #39445a;
   color: white;
-  padding-top: 100px;
+  padding: 100px 0;
+
 
 }
 

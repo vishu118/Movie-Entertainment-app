@@ -8,9 +8,10 @@ const Header = () => {
  <>
      <div className="header">
         
-          <span className="Name">
+          <span className="Name" onClick = {() => window.scroll(0,0)}>
             <img src={logo} alt="" className="logo" />
             MOVIX
+            
           </span>
       
 
