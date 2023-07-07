@@ -27,7 +27,7 @@ export default function SimpleBottomNavigation() {
           bottom: 0,
           zIndex: 100,
         }}
-        showLabels
+        showLabels ={true}
         value={value}
         onChange={(event, value) => {
           setValue(value);
