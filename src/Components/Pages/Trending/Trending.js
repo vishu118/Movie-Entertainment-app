@@ -9,7 +9,6 @@ import CustomPagination from "../../Pagination/Pagination";
 const Trending = () => {
   const [content, setContent] = useState([]);
   const [page , setPage] = useState(1)
-  const auth = "2e302e23979f60ced7d629e4168670c9";
   const Api_key = "api_key=2e302e23979f60ced7d629e4168670c9";
   const Base_Url = "https://api.themoviedb.org/3/";
   const img_url = "https://image.tmdb.org/t/p/w500";
@@ -25,8 +24,10 @@ const Trending = () => {
   };
 
   useEffect(() => {
+    window.scroll(0,0)
     fetchTrending();
-  }, [page]);
+    // eslint-disable-next-line
+  },[page]);
 
   return (
    <>
