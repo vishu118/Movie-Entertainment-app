@@ -46,7 +46,7 @@ const Trending = () => {
         ))}
     </div>
     <CustomPagination  setPage = {setPage}
-       
+      
     />
    </>
   );

@@ -21,7 +21,11 @@
       width: 46%;
     }
   }
-  
+  .rating{
+    display: flex;
+    align-items: center;
+ 
+  }
   .poster {
     border-radius: 10px;
   }

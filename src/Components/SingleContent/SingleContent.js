@@ -1,7 +1,8 @@
 import React from "react";
 import "./SingleContent.css";
 import { img_300, unavailable } from "../Config/Config";
-import { Badge } from "@mui/material";
+import StarIcon from '@mui/icons-material/Star';
+
 
 const SingleContent = ({
   id,
@@ -11,9 +12,11 @@ const SingleContent = ({
   media_type,
   vote_average,
 }) => {
+
+
   return (
     <div className="media">
-      <Badge badgeContent={vote_average} color = {vote_average > 6 ? "primary" : "secondary"} fontSize= "20px"/>
+
       <img
         className="poster"
         src={poster ? `${img_300}${poster}` : unavailable}
@@ -22,7 +25,9 @@ const SingleContent = ({
       <b className="title">{title}</b>
       <span className="subTitle">
         {media_type === "tv" ? "Series" : "Movie"}
-        <span className="subTitle">{date}</span>
+       
+      <span className="rating"><StarIcon sx={{color:"#FF8B3D"}}/>{`${vote_average}/10`}</span>
+        
       </span>
     </div>
   );
