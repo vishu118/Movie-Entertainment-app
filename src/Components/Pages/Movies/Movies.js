@@ -36,7 +36,7 @@ const Movies = () => {
 
   return (
      <>
-      <span className="PageTitle"> Discover Movies</span>
+      <span className="PageTitle"> Movies</span>
       <Genres
         type = "movie"
         selectedGenres = {selectedGenres}

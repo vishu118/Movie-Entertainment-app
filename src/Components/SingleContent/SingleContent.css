@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: column;
     width: 250px;
-    padding: 5px;
-    margin: 5px 0;
+    padding: 15px;
+    margin: 25px 0;
     background-color: #282c34;
     border-radius: 10px;
     position: relative;
@@ -27,7 +27,7 @@
  
   }
   .likes{
-    display: flex;
+     display: flex;
     align-items: center;
   }
   .poster {
