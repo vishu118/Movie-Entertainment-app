@@ -58,7 +58,7 @@ export default function SimpleBottomNavigation() {
         />
         <BottomNavigationAction
           style={{ color: "white" }}
-          label="Serach"
+          label="Search"
           icon={<SearchIcon />}
           value={value}
           onClick = {()=>navigate("/search")}

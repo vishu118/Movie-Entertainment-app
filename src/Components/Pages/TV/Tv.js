@@ -30,7 +30,11 @@ const Tv = () => {
     fetchSeries()
   })
   return (
+    <>
+    <span className="PageTitle"> TV Series</span>
+
    <div className='trending'>
+   
      {content &&
           content.map((c) => (
             <SingleContent
@@ -46,6 +50,8 @@ const Tv = () => {
           ))}
    <CustomPagination setPage={setPage} TotalPages={TotalPages}/>
    </div>
+
+    </>
   )
 }
 
