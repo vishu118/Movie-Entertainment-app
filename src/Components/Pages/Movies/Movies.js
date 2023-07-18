@@ -41,8 +41,8 @@ const Movies = () => {
         type = "movie"
         selectedGenres = {selectedGenres}
         setSelectedGenres = {setSelectedGenres}
-        Genres = {Genre}
-        setGenres = {setGenre}
+        Genre = {Genre}
+        setGenre = {setGenre}
         page = {page}
         setPage={setPage}
 
