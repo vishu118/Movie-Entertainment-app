@@ -22,6 +22,7 @@ const Movies = () => {
 
   const fetchMovies = async ()=>{
     const {data} = await axios.get(movieURL)
+    console.log(data.results)
     setContent(data.results)
     setTotalPages(data.total_pages);
     console.log(TotalPages)
@@ -47,6 +48,8 @@ const Movies = () => {
         setPage={setPage}
 
       />
+
+
      <div className="trending">
       {content &&
         content.map((ele) => (
@@ -63,7 +66,7 @@ const Movies = () => {
         ))}
     </div>
     { (
-        <CustomPagination setPage={setPage} TotalPages={TotalPages} />
+        <CustomPagination setPage={setPage} TotalPages={500}/>
       )}
      </>
   )

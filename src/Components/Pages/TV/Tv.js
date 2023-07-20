@@ -8,7 +8,6 @@ const Tv = () => {
 
   const [page, setPage] = useState(1);
   const [content, setContent] = useState([]);
-  const [numOfPages, setNumOfPages] = useState();
   const [TotalPages,setTotalPages] = useState()
 
   const Api_key = "api_key=2e302e23979f60ced7d629e4168670c9";
@@ -48,7 +47,7 @@ const Tv = () => {
               popularity={c.popularity}
             />
           ))}
-   <CustomPagination setPage={setPage} TotalPages={TotalPages}/>
+   <CustomPagination setPage={setPage} TotalPages={500}/>
    </div>
 
     </>
