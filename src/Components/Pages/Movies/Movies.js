@@ -4,6 +4,9 @@ import axios from 'axios';
 import SingleContent from '../../SingleContent/SingleContent';
 import CustomPagination from '../../Pagination/Pagination';
 import Genres from '../../Genres/Genres';
+import useGenre from '../../../Hooks/useGenre';
+
+
 
 const Movies = () => {
   const [content ,setContent] = useState([])
@@ -11,6 +14,7 @@ const Movies = () => {
   const [TotalPages, setTotalPages] = useState();
   const [Genre, setGenre] = useState([]);
   const [selectedGenre, setSelectedGenre] = useState([]);
+  const genreforURL = useGenre(selectedGenre)
  
   const Api_key = "api_key=2e302e23979f60ced7d629e4168670c9";
   const Base_Url = "https://api.themoviedb.org/3/";
@@ -18,7 +22,7 @@ const Movies = () => {
   const movieURL =   
   Base_Url +
   "discover/movie?" +
-  Api_key + `&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}` ;
+  Api_key + `&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genreforURL}` ;
 
   const fetchMovies = async ()=>{
     const {data} = await axios.get(movieURL)
@@ -30,12 +34,14 @@ const Movies = () => {
     window.scroll(0, 0);
     fetchMovies();
     // eslint-disable-next-line
-  },[page]);
+  },[page,genreforURL]);
 
 
   return (
      <>
       <span className="PageTitle"> Movies</span>
+<div className='wrapper'>
+
       <Genres
         type = "movie"
         selectedGenre = {selectedGenre}
@@ -46,7 +52,6 @@ const Movies = () => {
         setPage={setPage}
 
       />
-
 
      <div className="trending">
       {content &&
@@ -63,8 +68,11 @@ const Movies = () => {
           />
         ))}
     </div>
+
+
+</div>
     { (
-        <CustomPagination setPage={setPage} TotalPages={500}/>
+        <CustomPagination setPage={setPage} TotalPages={TotalPages}/>
       )}
      </>
   )

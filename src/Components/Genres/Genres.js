@@ -18,7 +18,8 @@ const Genres = ({
 
 const handleAdd = (genre) => {
 setSelectedGenre([...selectedGenre, genre])
-setGenre(Genre.filter((ele) => ele.id !== Genre.id))
+setGenre(Genre.filter((ele) => ele.id !== genre.id))
+setPage(1)
 }
 
 const handleRemove = (genre) => {
