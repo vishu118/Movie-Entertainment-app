@@ -10,7 +10,7 @@ const Movies = () => {
   const [page , setPage] = useState(1)
   const [TotalPages, setTotalPages] = useState();
   const [Genre, setGenre] = useState([]);
-  const [selectedGenres, setSelectedGenres] = useState([]);
+  const [selectedGenre, setSelectedGenre] = useState([]);
  
   const Api_key = "api_key=2e302e23979f60ced7d629e4168670c9";
   const Base_Url = "https://api.themoviedb.org/3/";
@@ -22,10 +22,8 @@ const Movies = () => {
 
   const fetchMovies = async ()=>{
     const {data} = await axios.get(movieURL)
-    console.log(data.results)
     setContent(data.results)
     setTotalPages(data.total_pages);
-    console.log(TotalPages)
   }
 
   useEffect(() => {
@@ -40,8 +38,8 @@ const Movies = () => {
       <span className="PageTitle"> Movies</span>
       <Genres
         type = "movie"
-        selectedGenres = {selectedGenres}
-        setSelectedGenres = {setSelectedGenres}
+        selectedGenre = {selectedGenre}
+        setSelectedGenre = {setSelectedGenre}
         Genre = {Genre}
         setGenre = {setGenre}
         page = {page}
