@@ -3,12 +3,16 @@ import { useState } from 'react';
 import SingleContent from '../../SingleContent/SingleContent';
 import axios from 'axios';
 import CustomPagination, { Pagination } from '../../Pagination/Pagination';
-
+import useGenre from '../../../Hooks/useGenre';
+import Genres from '../../Genres/Genres';
 const Tv = () => {
-
-  const [page, setPage] = useState(1);
-  const [content, setContent] = useState([]);
-  const [TotalPages,setTotalPages] = useState()
+  
+  const [content ,setContent] = useState([])
+  const [page , setPage] = useState(1)
+  const [TotalPages, setTotalPages] = useState();
+  const [Genre, setGenre] = useState([]);
+  const [selectedGenre, setSelectedGenre] = useState([]);
+  const genreforURL = useGenre(selectedGenre)
 
   const Api_key = "api_key=2e302e23979f60ced7d629e4168670c9";
   const Base_Url = "https://api.themoviedb.org/3/";
@@ -16,7 +20,7 @@ const Tv = () => {
   const TvURL =   
   Base_Url +
   "discover/tv?" +
-  Api_key + `&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}` ;
+  Api_key + `&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genreforURL}` ;
 
   const fetchSeries = async ()=>{
     const {data} = await axios.get(TvURL)
@@ -27,12 +31,23 @@ const Tv = () => {
 
   useEffect(()=>{
     fetchSeries()
-  })
+  },[genreforURL, page])
   return (
     <>
     <span className="PageTitle"> TV Series</span>
 
+   <Genres
+        type = "tv"
+        selectedGenre = {selectedGenre}
+        setSelectedGenre = {setSelectedGenre}
+        Genre = {Genre}
+        setGenre = {setGenre}
+        page = {page}
+        setPage={setPage}
+
+      />
    <div className='trending'>
+
    
      {content &&
           content.map((c) => (
